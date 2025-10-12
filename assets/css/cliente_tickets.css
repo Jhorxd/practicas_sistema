@@ -1,0 +1,345 @@
+/* ============================
+   Estilos Generales y Tipografía
+   ============================ */
+
+body {
+    background-color: #f4f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 32px;
+    color: #232946;
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1565c0; /* Azul corporativo */
+    margin-bottom: 28px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+/* ============================
+   Botones
+   ============================ */
+
+/* Botón Registrar */
+.btn-registrar {
+    display: inline-block;
+    background-color: #1565c0;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(21, 101, 192, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-registrar:hover,
+.btn-registrar:focus {
+    background-color: #0d3c91;
+    box-shadow: 0 8px 20px rgba(13, 60, 145, 0.6);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.btn-registrar:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(13, 60, 145, 0.4);
+}
+
+/* Botón Eliminar */
+.btn-eliminar {
+    display: inline-block;
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.btn-eliminar:hover,
+.btn-eliminar:focus {
+    background-color: #b71c1c;
+    box-shadow: 0 8px 20px rgba(183, 28, 28, 0.6);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.btn-eliminar:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(183, 28, 28, 0.4);
+}
+
+/* Botón Logout */
+.container .btn-logout {
+    background: #fff;
+    color: #1565c0;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.container .btn-logout:hover,
+.container .btn-logout:focus {
+    background: #0d3c91;
+    color: #fff;
+    border-color: #0d3c91;
+    outline: none;
+}
+
+/* ============================
+   Tabla de Tickets
+   ============================ */
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    box-shadow: 0 6px 24px rgba(21, 101, 192, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+thead {
+    background-color: #1565c0;
+    color: #fff;
+}
+
+thead th {
+    padding: 16px 24px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dbe2ef;
+    transition: background-color 0.25s ease;
+    cursor: default;
+}
+
+tbody tr:hover {
+    background-color: #e8f0fe;
+}
+
+tbody td {
+    padding: 16px 24px;
+    font-size: 1rem;
+    color: #2e3a59;
+}
+
+/* Columna Prioridad */
+tbody td:nth-child(3) {
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+tbody td:nth-child(3).alta {
+    color: #d32f2f; /* Rojo para alta */
+}
+
+tbody td:nth-child(3).media {
+    color: #fbc02d; /* Amarillo para media */
+}
+
+tbody td:nth-child(3).baja {
+    color: #388e3c; /* Verde para baja */
+}
+
+/* Columna Estado */
+tbody td:nth-child(4) {
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+tbody td:nth-child(4).abierto {
+    color: #1976d2; /* Azul para abierto */
+}
+
+tbody td:nth-child(4).cerrado {
+    color: #757575; /* Gris para cerrado */
+}
+
+/* Enlaces de acciones */
+tbody td a {
+    color: #1565c0;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 8px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+tbody td a:hover,
+tbody td a:focus {
+    color: #0d3c91;
+    text-decoration: underline;
+    outline: none;
+}
+
+/* ============================
+   Formulario de filtro
+   ============================ */
+
+form label {
+    color: #1565c0;
+    font-weight: 700;
+    margin-right: 12px;
+    font-size: 1.1rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+form select#filtro-prioridad {
+    border: 2px solid #1565c0;
+    background-color: #e3eafc;
+    color: #0d3c91;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    outline-offset: 2px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+}
+
+form select#filtro-prioridad:hover {
+    background-color: #d4dffb;
+}
+
+form select#filtro-prioridad:focus {
+    border-color: #0d3c91;
+    background-color: #c7d6fa;
+    box-shadow: 0 0 10px rgba(21, 101, 192, 0.6);
+}
+
+/* Fondo general de la página */
+body {
+    background: linear-gradient(135deg, #f0f2f5 0%, #d9e2ec 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    color: #232946;
+    min-height: 100vh;
+}
+
+/* Contenedor principal para el contenido */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 32px 40px;
+}
+
+/* Opcional: suavizar bordes y dar sombra a tablas */
+table {
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(21, 101, 192, 0.1);
+}
+
+
+/* ============================
+   Contenedores y Layout
+   ============================ */
+
+/* Contenedor botón alineado a la derecha */
+div[style*="text-align: right"] {
+    margin-bottom: 24px;
+}
+
+/* ============================
+   Responsive
+   ============================ */
+
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        display: none;
+    }
+
+    tbody tr {
+        margin-bottom: 20px;
+        border-bottom: 2px solid #1565c0;
+        padding: 16px;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 6px 18px rgba(21, 101, 192, 0.15);
+    }
+
+    tbody td {
+        padding: 12px 16px;
+        text-align: right;
+        font-size: 0.95rem;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #dbe2ef;
+        font-weight: 700;
+    }
+
+    tbody td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 16px;/* Fondo general de la página */
+body {
+    background: linear-gradient(135deg, #f0f2f5 0%, #d9e2ec 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    color: #232946;
+    min-height: 100vh;
+}
+
+/* Contenedor principal para el contenido */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 32px 40px;
+}
+
+/* Opcional: suavizar bordes y dar sombra a tablas */
+table {
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(21, 101, 192, 0.1);
+}
+
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: 700;
+        color: #1565c0;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    tbody td:last-child {
+        border-bottom: none;
+    }
+}

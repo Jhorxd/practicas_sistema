@@ -1,0 +1,194 @@
+body {
+    background: #f4f7fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: #1976d2;
+    color: #fff;
+    padding: 24px 32px 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.container .btn-logout {
+    background: #fff;
+    color: #1976d2;
+    padding: 8px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+    border: 1px solid #fff;
+}
+
+.container .btn-logout:hover {
+    background: #1565c0;
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-ver-tickets {
+    display: inline-block;
+    background-color: #1976d2;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 3px 6px rgba(25, 118, 210, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-ver-tickets:hover,
+.btn-ver-tickets:focus {
+    background-color: #1565c0;
+    box-shadow: 0 6px 14px rgba(21, 101, 192, 0.6);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.btn-ver-tickets:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(21, 101, 192, 0.4);
+}
+
+
+form {
+    background: #fff;
+    max-width: 420px;
+    margin: 32px auto;
+    padding: 32px 28px;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(25, 118, 210, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #333c4a;
+}
+
+input[type="text"],
+textarea,
+select,
+input[type="file"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #bfc8d2;
+    font-size: 1rem;
+    background: #f7fafc;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #1976d2;
+    outline: none;
+}
+
+
+
+    .swal2-success-circular-line-right,
+    .swal2-success-circular-line-left,
+    .swal2-success-fix {
+        background-color: #565c5300 !important;
+    }
+
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: #1565c0;
+}
+
+@media (max-width: 600px) {
+    .header, form {
+        padding: 16px;
+    }
+    form {
+        max-width: 98vw;
+    }
+}
+
+/* Transiciones más suaves en inputs y botones */
+input[type="text"],
+textarea,
+select,
+input[type="file"],
+button[type="submit"] {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Agregar sombra sutil al foco para mejor accesibilidad */
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #1976d2;
+    outline: none;
+    box-shadow: 0 0 6px rgba(25, 118, 210, 0.4);
+}
+
+/* Sombra y efecto al botón para que sea más táctil */
+button[type="submit"] {
+    box-shadow: 0 3px 6px rgba(25, 118, 210, 0.3);
+}
+
+button[type="submit"]:hover {
+    background: #1565c0;
+    box-shadow: 0 5px 12px rgba(21, 101, 192, 0.6);
+}
+
+/* Cursor pointer en inputs tipo file para mejor UX */
+input[type="file"] {
+    cursor: pointer;
+}
+
+/* Mejorar legibilidad en etiquetas */
+label {
+    font-size: 1.05rem;
+}
+
+/* Ajuste para que el textarea tenga altura mínima */
+textarea {
+    min-height: 120px;
+}
+
+/* Ajuste para dispositivos muy pequeños */
+@media (max-width: 400px) {
+    form {
+        padding: 24px 16px;
+    }
+}
+
