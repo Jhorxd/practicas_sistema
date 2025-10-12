@@ -72,7 +72,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 
 # Local
-$database = 'sistema_soporte';
+$database = 'sistema_practicas';
 $username = 'root';
 $password = '';
 

@@ -1,0 +1,72 @@
+body {
+    background: linear-gradient(135deg, #f0f4f8, #dce3ec);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+.titulo-panel {
+    color: #1e293b;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.module-card {
+    border-radius: 20px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.module-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.icono-modulo {
+    font-size: 45px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    font-weight: 700;
+    color: #222;
+    font-size: 1.25rem;
+}
+
+.card-text {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    border-radius: 12px;
+    font-weight: 500;
+    padding: 10px 18px;
+}
+
+.navbar-brand {
+    letter-spacing: 0.5px;
+}
+
+.footer {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .titulo-panel {
+        font-size: 1.5rem;
+    }
+}

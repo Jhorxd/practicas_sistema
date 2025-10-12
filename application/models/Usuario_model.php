@@ -31,6 +31,15 @@ public function obtener_clientes() {
     return $this->db->get()->result();
 }
 
+    // Listar todos los usuarios
+    public function listar() {
+        $this->db->select('*');
+        $this->db->from('usuarios');
+        $this->db->order_by('nombre', 'ASC');
+        return $this->db->get()->result();
+    }
+
+
 
 
 
