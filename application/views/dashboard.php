@@ -21,7 +21,7 @@
 </nav>
 
 <div class="container mt-5">
-    <h2 class="text-center mb-5 fw-bold titulo-panel">📊 Panel de Gestión de Prácticas Profesionales</h2>
+    <h2 class="text-center mb-5 fw-bold titulo-panel">📊 Panel de Gestión de Sistemas ERP</h2>
 
     <div class="row g-4 justify-content-center">
         <!-- Módulo de Requerimientos -->

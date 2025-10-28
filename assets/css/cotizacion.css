@@ -1,0 +1,59 @@
+
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h2 {
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .form-label {
+            font-weight: 500;
+        }
+
+        .table {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table thead th {
+            background-color: #212529;
+            color: #fff;
+        }
+
+        .btn-primary, .btn-success, .btn-secondary {
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover, .btn-success:hover, .btn-secondary:hover {
+            transform: scale(1.03);
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        #total {
+            font-weight: 700;
+            color: #27ae60;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }

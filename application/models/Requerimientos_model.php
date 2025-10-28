@@ -12,6 +12,16 @@ class Requerimientos_model extends CI_Model {
         return $this->db->get()->result();
     }
 
+    public function listar_por_proyecto($id_proyecto) {
+    $this->db->select('r.*, p.nombre_proyecto');
+    $this->db->from('requerimientos r');
+    $this->db->join('proyectos p', 'p.id_proyecto = r.id_proyecto', 'left');
+    $this->db->where('r.id_proyecto', $id_proyecto);
+    $this->db->order_by('r.fecha_registro', 'DESC');
+    return $this->db->get()->result();
+}
+    
+
     // Insertar un requerimiento
     public function insertar($data) {
         $insert = array(

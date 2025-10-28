@@ -46,4 +46,12 @@ class Proyecto_model extends CI_Model {
     $this->db->where('id_proyecto', $id);
     $this->db->update('proyectos', ['estado' => $estado]);
 }
+
+public function listar_con_cotizacion() {
+    $this->db->select('p.id_proyecto, p.nombre_proyecto, p.fecha_creacion, c.monto_total');
+    $this->db->from('proyectos p');
+    $this->db->join('cotizaciones c', 'c.id_proyecto = p.id_proyecto', 'left');
+    $query = $this->db->get();
+    return $query->result();
+}
 }
