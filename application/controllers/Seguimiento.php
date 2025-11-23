@@ -52,13 +52,6 @@ class Seguimiento extends CI_Controller {
 
     // Subir adjunto
 public function subir_adjunto() {
-
-    $this->session->set_flashdata('swal', [
-    'icon' => $upload_success ? 'success' : 'error',
-    'title' => $upload_success ? 'Archivo subido' : 'Error al subir archivo',
-    'text' => $upload_success ? 'Archivo subido correctamente' : $this->upload->display_errors()
-]);
-
     $id = $this->input->post('id_requerimiento');
 
     log_message('debug', "Iniciando subida de archivo para requerimiento ID: $id");
@@ -66,28 +59,22 @@ public function subir_adjunto() {
     // Revisar que el input tenga archivo
     if (!isset($_FILES['archivo']) || $_FILES['archivo']['error'] == 4) {
         log_message('error', 'No se ha seleccionado ningún archivo.');
-        $this->session->set_flashdata('error', 'No se ha seleccionado ningún archivo.');
+        $this->session->set_flashdata('swal', [
+            'icon' => 'error',
+            'title' => 'Error',
+            'text' => 'No se ha seleccionado ningún archivo.'
+        ]);
         redirect('seguimiento/detalle/'.$id);
     }
-
-    log_message('debug', 'Archivo detectado en $_FILES: ' . print_r($_FILES['archivo'], true));
 
     $config['upload_path']   = './uploads/';
     $config['allowed_types'] = 'pdf|doc|docx|gif|jpg|jpeg|png';
     $config['max_size']      = 2048; // 2MB
-    $config['encrypt_name']  = TRUE; // Renombra el archivo para evitar conflictos
+    $config['encrypt_name']  = TRUE; 
 
     // Crear carpeta si no existe
     if (!is_dir($config['upload_path'])) {
-        if (mkdir($config['upload_path'], 0777, true)) {
-            log_message('debug', 'Carpeta uploads creada correctamente.');
-        } else {
-            log_message('error', 'No se pudo crear la carpeta uploads.');
-            $this->session->set_flashdata('error', 'No se pudo crear la carpeta uploads.');
-            redirect('seguimiento/detalle/'.$id);
-        }
-    } else {
-        log_message('debug', 'Carpeta uploads ya existe.');
+        mkdir($config['upload_path'], 0777, true);
     }
 
     $this->load->library('upload', $config);
@@ -96,22 +83,34 @@ public function subir_adjunto() {
         $fileData = $this->upload->data();
         log_message('debug', 'Archivo subido correctamente: ' . $fileData['file_name']);
 
-        // Guardar en la base de datos
         $this->Adjuntos_model->insertar([
             'id_requerimiento' => $id,
             'nombre_archivo'   => $fileData['file_name'],
             'ruta'             => 'uploads/'.$fileData['file_name']
         ]);
 
-        $this->session->set_flashdata('success', 'Archivo subido correctamente.');
+        $upload_success = true;
+        $swal = [
+            'icon' => 'success',
+            'title' => 'Archivo subido',
+            'text' => 'Archivo subido correctamente'
+        ];
     } else {
-        $error = $this->upload->display_errors();
-        log_message('error', 'Error al subir archivo: ' . $error);
-        $this->session->set_flashdata('error', $error);
+        $upload_success = false;
+        $swal = [
+            'icon' => 'error',
+            'title' => 'Error al subir archivo',
+            'text' => $this->upload->display_errors()
+        ];
+        log_message('error', 'Error al subir archivo: ' . $swal['text']);
     }
+
+    // Mostrar SweetAlert
+    $this->session->set_flashdata('swal', $swal);
 
     redirect('seguimiento/detalle/'.$id);
 }
+
 
 public function eliminar_historial() {
 

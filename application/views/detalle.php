@@ -1,99 +1,197 @@
 <style>
-/* 🌿 Estilo general */
+/* 🌟 Estilo general moderno y llamativo */
 body {
-    background: linear-gradient(135deg, #f0f4f8, #dce3ec);
+    background: linear-gradient(135deg, #e0f7fa, #e1bee7);
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     padding: 20px;
+    color: #1f2937;
 }
 
+/* Tarjetas */
 .module-card {
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
 }
 
 .module-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
+/* Títulos */
 .card-title {
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: #1e293b;
-    margin-bottom: 10px;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #000000ff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
+/* Texto */
 .card-text {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #334155;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-table th, table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-table thead tr {
-    background-color: #f3f4f6;
-}
-
+/* Botones */
 .btn {
-    border-radius: 12px;
-    padding: 10px 18px;
-    font-weight: 500;
+    border-radius: 15px;
+    padding: 12px 22px;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .btn-primary {
-    background-color: #3b82f6;
+    background: linear-gradient(45deg, #3b82f6, #3b82f6);
     color: #fff;
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: #2563eb;
+    background: linear-gradient(45deg, #3b82f6, #2563eb);
+    transform: scale(1.05);
 }
 
 .btn-secondary {
-    background-color: #64748b;
+    background: linear-gradient(45deg, #6b7280, #9ca3af);
     color: #fff;
     border: none;
 }
 
 .btn-secondary:hover {
-    background-color: #475569;
+    background: linear-gradient(45deg, #4b5563, #6b7280);
+    transform: scale(1.05);
 }
 
 .btn-danger {
-    background-color: #ef4444;
+    background: linear-gradient(45deg, #ef4444, #f87171);
     color: #fff;
     border: none;
 }
 
 .btn-danger:hover {
-    background-color: #dc2626;
+    background: linear-gradient(45deg, #b91c1c, #ef4444);
+    transform: scale(1.05);
 }
 
+/* Inputs */
 .form-control {
-    padding: 8px 12px;
-    border-radius: 10px;
+    padding: 10px 15px;
+    border-radius: 15px;
     border: 1px solid #cbd5e1;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 8px rgba(59,130,246,0.3);
+    outline: none;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+table thead tr {
+    background: linear-gradient(90deg, #3b82f6, #3b82f6);
+    color: #fff;
+}
+
+table tbody tr:hover {
+    background-color: #f3f4f6;
+    transition: all 0.2s ease;
+}
+
+/* Lista de adjuntos */
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+ul li a img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+ul li a img:hover {
+    transform: scale(1.1);
+    border-color: #3b82f6;
+}
+
+/* Mini tarjetas de estadísticas */
+.stats-card {
+    flex: 1;
+    min-width: 150px;
+    background: linear-gradient(135deg, #3b82f6, #3b82f6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.stats-card h3 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.stats-card p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Botón volver */
+.mb-3 a {
+    font-weight: 600;
     font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #64748b, #1e293b);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.mb-3 a:hover {
+    background: linear-gradient(45deg, #475569, #334155);
+    transform: scale(1.05);
 }
 </style>
+
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
