@@ -49,8 +49,34 @@ class Requerimientos_model extends CI_Model {
     }
 
     // Obtener requerimiento por ID
-    public function obtener_por_id($id) {
-        $this->db->where('id_requerimiento', $id);
-        return $this->db->get('requerimientos')->row();
+public function obtener_por_id($id) {
+    $this->db->select('r.*, p.nombre_proyecto');
+    $this->db->from('requerimientos r');
+    $this->db->join('proyectos p', 'p.id_proyecto = r.id_proyecto', 'left');
+    $this->db->where('r.id_requerimiento', $id);
+    return $this->db->get()->row();
+}
+
+public function actualizar_avance($id, $estado, $porcentaje_avance) {
+    $this->db->where('id_requerimiento', $id);
+    $this->db->update('requerimientos', [
+        'estado' => $estado,
+        'porcentaje_avance' => $porcentaje_avance
+    ]);
+}
+    public function count_all() {
+        return $this->db->count_all('requerimientos');
     }
+
+    public function count_by_estado($estado) {
+        $this->db->where('estado', $estado);
+        return $this->db->count_all_results('requerimientos');
+    }
+
+    public function promedio_avance() {
+        $this->db->select_avg('porcentaje_avance');
+        $query = $this->db->get('requerimientos');
+        return round($query->row()->porcentaje_avance, 2);
+    }
+
 }
